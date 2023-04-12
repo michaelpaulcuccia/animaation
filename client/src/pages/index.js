@@ -12,7 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Ball/>
+        <Ball animationChoice='slide'/>
+        <Ball animationChoice='fade'/>
       </Container>
     </>
   )

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const fadeIn = keyframes`
   0% {
@@ -8,6 +8,11 @@ const fadeIn = keyframes`
   100% {
     opacity: 1;
   }
+`;
+
+const fadeAnimation = () =>
+  css`
+    ${fadeIn} 2s ease-out infinite;
 `;
 
 const slideRight = keyframes`
@@ -19,17 +24,27 @@ const slideRight = keyframes`
     }
 `;
 
+const slideAnimation = () =>
+  css`
+    ${slideRight} 1s linear infinite;
+`;
+
 const Root = styled.div`
     height: 300px;
     width: 300px;
     border-radius: 50%;
     background: radial-gradient(circle closest-side, #56ab2f, #a8e063);
-    //animation: 2s ${fadeIn} ease-out infinite;
-    //animation: ${slideRight} 1s linear infinite;
+    animation: ${props => {
+        if (props.animationChoice === 'fade') {
+            return fadeAnimation;
+        } else if (props.animationChoice === 'slide') {
+            return slideAnimation;
+        }
+    }};
 `;
 
-export default function Ball() {
+export default function Ball({animationChoice}) {
   return (
-    <Root></Root>
+    <Root animationChoice={animationChoice}></Root>
   )
 }
