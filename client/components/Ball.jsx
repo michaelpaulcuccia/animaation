@@ -12,7 +12,7 @@ const fadeIn = keyframes`
 
 const fadeAnimation = () =>
   css`
-    ${fadeIn} 2s ease-out infinite;
+    ${fadeIn} 5s linear infinite;
 `;
 
 const slideRight = keyframes`
@@ -26,7 +26,7 @@ const slideRight = keyframes`
 
 const slideAnimation = () =>
   css`
-    ${slideRight} 1s linear infinite;
+    ${slideRight} 5s linear infinite;
 `;
 
 const Root = styled.div`
