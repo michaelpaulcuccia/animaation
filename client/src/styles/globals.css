@@ -1,8 +1,13 @@
+:root {
+  --white: white;
+  --soft-white: #e2efef;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background-color: #e2efef;
+  background-color: var(--soft-white);
 }
 
 a {

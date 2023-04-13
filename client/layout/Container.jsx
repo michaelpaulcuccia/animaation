@@ -6,7 +6,7 @@ const Container = styled.div`
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
+    background-color: var(--white);
 `;
 
 const ComponentWrapper = ({ children, className }) => {
